@@ -9,7 +9,7 @@ export default async function Home() {
     houses.map(async (house) => {
       const members = await Promise.all(
         house.swornMembers.map(async (member) => {
-          const res = await fetch(member);
+          const res = await fetch(member as string);
           const data = await res.json();
 
           return data;
